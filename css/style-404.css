@@ -1,0 +1,114 @@
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .return {
+    position: absolute;
+    text-decoration: none;
+    color: #000;
+    font-size: 25px;
+    font-weight: bold;
+    top: 5%;
+    left: 5%;
+    padding: 20px 40px;
+    border: 2px solid #000;
+    box-shadow: 10px 10px 0 #000000;
+    transition: 0.1s;
+  }
+  
+  .return:hover {
+    box-shadow: -10px -10px 0 #ffffff;
+  }
+  
+  .numberError {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .error {
+    color: #000;
+    margin: 0;
+    font-size: 350px;
+    letter-spacing: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .error::before, .error::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+  }
+  
+  .error::before {
+    color: #ffffff;
+    animation: glitch 1s infinite;
+  }
+  
+  .error::after {
+    color: #69c9d0;
+    animation: glitch 2s infinite;
+  }
+  
+  .notFound {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    padding: 0 30px;
+    border-left: 20px solid #000000;
+    text-align: center;
+  }
+  
+  @keyframes glitch {
+    0% { top: -5px; left: -3px; }
+    25% { top: 0px; left: -3px; }
+    50% { top: 5px; left: 3px; }
+    75% { top: 0px; left: 5px; }
+    100% { top: -5px; left: -3px; }
+  }
+  
+  @media (max-width: 1024px) {
+    .error {  font-size: 150px; letter-spacing: 5px;}
+    .notFound { font-size: 30px; }
+  }
+  
+  @media (max-width: 600px) {
+    .error { font-size: 100px; }
+    .return {font-size: 20px; padding: 15px 30px; }
+    .notFound {font-size: 24px;  padding: 0 20px;}
+  }
+  
+  @media (max-width: 325px) {
+    .error {height: 600px; font-size: 80px; }
+    .return { font-size: 18px; padding: 10px 20px;}
+  }
+  
+  @media (min-width: 1440px) {
+    body { font-size: 18px; }
+    .return { font-size: 30px; padding: 25px 50px;}
+    .error { font-size: 400px;letter-spacing: 15px; }
+    .notFound {  font-size: 50px;  padding: 0 40px; }
+  }
+  
+  @media (min-width: 1920px) {
+    body { font-size: 20px;}
+    .return {   font-size: 35px;   padding: 30px 60px; }
+    .error {   font-size: 500px;  letter-spacing: 20px; }
+    .notFound { font-size: 60px;  padding: 0 50px  }
+  }
